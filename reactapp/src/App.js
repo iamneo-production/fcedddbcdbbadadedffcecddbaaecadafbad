@@ -1,6 +1,9 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 // import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Home component
 const Home = () => (
