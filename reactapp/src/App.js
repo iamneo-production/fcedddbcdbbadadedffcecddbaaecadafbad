@@ -1,6 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-// import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -36,14 +36,15 @@ function App() {
           </ul>
         </nav>
 
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        
+        <Routes>
+
+       
+          <Route path="/about"element={<About />}>
+          <Route path="/" element={<Home />}>
+            
+        </Routes>
+        
       </div>
     </Router>
   );
