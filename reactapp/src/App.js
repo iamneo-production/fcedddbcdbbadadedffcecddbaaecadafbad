@@ -19,6 +19,7 @@ function App() {
   return (
     <Router>
       <div>
+      <SignIn /> 
         <nav>
           <ul>
             <li>
@@ -35,6 +36,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    
   );
 }
 export default App;
