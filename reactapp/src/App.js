@@ -1,9 +1,5 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-
-
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Home component
 const Home = () => (
@@ -36,15 +32,10 @@ function App() {
           </ul>
         </nav>
 
-        
         <Routes>
-
-       
-          <Route path="/about"element={<About />}>
-          <Route path="/" element={<Home />}>
-            
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
         </Routes>
-        
       </div>
     </Router>
   );
