@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-
+import SignIn from "./SignIn";
 // Home component
 const Home = () => (
   <div>
@@ -8,7 +8,6 @@ const Home = () => (
     <p>Welcome to the Home page!</p>
   </div>
 );
-
 // About component
 const About = () => (
   <div>
@@ -16,7 +15,6 @@ const About = () => (
     <p>This is the About page.</p>
   </div>
 );
-
 function App() {
   return (
     <Router>
@@ -31,7 +29,6 @@ function App() {
             </li>
           </ul>
         </nav>
-
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
@@ -40,5 +37,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
