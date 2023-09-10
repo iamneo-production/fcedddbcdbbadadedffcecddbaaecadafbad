@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Index from './Index'; // Adjust the path as needed
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 // Home component
 const Home = () => (
@@ -9,7 +8,6 @@ const Home = () => (
     <p>Welcome to the Home page!</p>
   </div>
 );
-
 // About component
 const About = () => (
   <div>
@@ -17,7 +15,6 @@ const About = () => (
     <p>This is the About page.</p>
   </div>
 );
-
 function App() {
   return (
     <Router>
@@ -25,10 +22,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Index /> {/* Use the Index component here */}
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </nav>
@@ -38,7 +35,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    
   );
 }
-
 export default App;
