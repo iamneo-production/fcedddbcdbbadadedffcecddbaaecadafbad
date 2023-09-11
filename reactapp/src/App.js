@@ -1,19 +1,41 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import 'Routes' instead of 'Switch'
-import Home from './Home';
-import Login from './Login';
-import Dashboard from './Dashboard';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-const App = () => {
+// Home component
+const Home = () => (
+  <div>
+    <h2>Home Page</h2>
+    <p>Welcome to the Home page!</p>
+  </div>
+);
+// About component
+const About = () => (
+  <div>
+    <h2>About Page</h2>
+    <p>This is the About page.</p>
+  </div>
+);
+function App() {
   return (
     <Router>
-      <Routes> {/* Use 'Routes' instead of 'Switch' */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
     </Router>
+    
   );
-};
-
+}
 export default App;
