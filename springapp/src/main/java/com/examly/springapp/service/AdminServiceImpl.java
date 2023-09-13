@@ -1,14 +1,14 @@
 package com.examly.springapp.service;
 
-import com.gift.ordering.system.entity.Admin;
-import com.gift.ordering.system.entity.Theme;
-import com.gift.ordering.system.model.AdminModel;
-import com.gift.ordering.system.model.ThemeModel;
-import com.gift.ordering.system.repository.ThemeRepository;
+import com.examly.springapp.entity.Admin;
+import com.examly.springapp.entity.Theme;
+import com.examly.springapp.model.AdminModel;
+import com.examly.springapp.model.ThemeModel;
+import com.examly.springapp.repository.ThemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gift.ordering.system.repository.AdminRepository;
+import com.examly.springapp.repository.AdminRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;

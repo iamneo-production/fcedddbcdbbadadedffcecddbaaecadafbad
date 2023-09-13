@@ -1,6 +1,6 @@
 package com.examly.springapp.service;
 
-import com.gift.ordering.system.model.UserModel;
+import com.examly.springapp.model.UserModel;
 
 public interface UserService {
     public void addUser(UserModel user);

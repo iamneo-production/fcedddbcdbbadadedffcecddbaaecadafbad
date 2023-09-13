@@ -1,7 +1,7 @@
 package com.examly.springapp.service;
 
 
-import com.gift.ordering.system.model.GiftModel;
+import com.examly.springapp.model.GiftModel;
 
 import java.util.List;
 

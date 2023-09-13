@@ -1,8 +1,8 @@
 package com.examly.springapp.service;
 
-import com.gift.ordering.system.entity.User;
-import com.gift.ordering.system.model.UserModel;
-import com.gift.ordering.system.repository.UserRepository;
+import com.examly.springapp.entity.User;
+import com.examly.springapp.model.UserModel;
+import com.examly.springapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

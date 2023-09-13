@@ -1,8 +1,8 @@
 package com.examly.springapp.service;
 
 
-import com.gift.ordering.system.model.GiftModel;
-import com.gift.ordering.system.model.ThemeModel;
+import com.examly.springapp.model.GiftModel;
+import com.examly.springapp.model.ThemeModel;
 
 import java.util.List;
 

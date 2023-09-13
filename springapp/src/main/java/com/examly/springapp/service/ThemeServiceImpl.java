@@ -1,9 +1,9 @@
 package com.examly.springapp.service;
 
 
-import com.gift.ordering.system.entity.Theme;
-import com.gift.ordering.system.model.ThemeModel;
-import com.gift.ordering.system.repository.ThemeRepository;
+import com.examly.springapp.entity.Theme;
+import com.examly.springapp.model.ThemeModel;
+import com.examly.springapp.repository.ThemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

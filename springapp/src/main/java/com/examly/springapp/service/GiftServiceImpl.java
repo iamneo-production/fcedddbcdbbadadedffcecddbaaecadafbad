@@ -1,9 +1,9 @@
 package com.examly.springapp.service;
 
 
-import com.gift.ordering.system.entity.Gift;
-import com.gift.ordering.system.model.GiftModel;
-import com.gift.ordering.system.repository.GiftRepository;
+import com.examly.springapp.entity.Gift;
+import com.examly.springapp.model.GiftModel;
+import com.examly.springapp.repository.GiftRepository;
 import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
