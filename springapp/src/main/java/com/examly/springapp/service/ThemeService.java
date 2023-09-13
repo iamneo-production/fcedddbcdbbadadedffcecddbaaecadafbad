@@ -1,4 +1,4 @@
-package com.gift.ordering.system.service;
+package com.examly.springapp.service;
 
 
 import com.gift.ordering.system.model.GiftModel;
