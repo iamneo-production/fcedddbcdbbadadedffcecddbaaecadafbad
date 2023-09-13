@@ -19,6 +19,7 @@ function App() {
   return (
     <Router>
       <div>
+      <HelloWorld />
         <nav>
           <ul>
             <li>
