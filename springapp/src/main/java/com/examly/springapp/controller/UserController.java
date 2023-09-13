@@ -16,6 +16,11 @@ public class UserController {
 
     }
 
+    @GetMapping
+    public String test(){
+        return "Hello World";
+    }
+
     @PostMapping("/signup")
     public void addUser(@RequestBody UserModel user) {
         this.userService.addUser(user);
