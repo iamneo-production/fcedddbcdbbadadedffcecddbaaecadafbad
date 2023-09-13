@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Login from './Login'; // Replace './Login' with the correct path to your 'Login.js' file
-import Dashboard from './Dashboard'; 
+
 // Home component
 const Home = () => (
   <div>
@@ -20,7 +19,6 @@ function App() {
   return (
     <Router>
       <div>
-      <Login />
         <nav>
           <ul>
             <li>
@@ -35,10 +33,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>
-        <Switch>
-        <Route path="/" exact component={Login} />
-        <Route path="/dashboard" component={Dashboard} />
-      </Switch>
       </div>
     </Router>
     
