@@ -2,11 +2,14 @@ package com.examly.springapp.entity;
 
 import java.util.Date;
 
+import com.examly.springapp.entity.Theme;
+import com.examly.springapp.entity.Gift;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 @Entity
 @Table(name = "orders")

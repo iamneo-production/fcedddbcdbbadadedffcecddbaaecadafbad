@@ -1,7 +1,7 @@
 package com.examly.springapp.controller;
 
-import com.gift.ordering.system.model.GiftModel;
-import com.gift.ordering.system.service.GiftService;
+import com.examly.springapp.model.GiftModel;
+import com.examly.springapp.service.GiftService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,8 +1,8 @@
-package com.gift.ordering.system.api;
+package com.examly.springapp.controller;
 
-import com.gift.ordering.system.model.LoginModel;
-import com.gift.ordering.system.model.UserModel;
-import com.gift.ordering.system.service.UserService;
+import com.examly.springapp.model.LoginModel;
+import com.examly.springapp.model.UserModel;
+import com.examly.springapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

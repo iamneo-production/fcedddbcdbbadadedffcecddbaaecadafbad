@@ -1,13 +1,13 @@
-package com.gift.ordering.system.api;
+package com.examly.springapp.controller;
 
-import com.gift.ordering.system.model.AdminModel;
-import com.gift.ordering.system.model.LoginModel;
-import com.gift.ordering.system.model.ThemeModel;
+import com.examly.springapp.model.AdminModel;
+import com.examly.springapp.model.LoginModel;
+import com.examly.springapp.model.ThemeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
-import com.gift.ordering.system.service.AdminService;
+import com.examly.springapp.service.AdminService;
 
 @RestController
 @RequestMapping("/admin")

@@ -1,7 +1,7 @@
-package com.gift.ordering.system.api;
+package com.examly.springapp.controller;
 
-import com.gift.ordering.system.model.ThemeModel;
-import com.gift.ordering.system.service.ThemeService;
+import com.examly.springapp.model.ThemeModel;
+import com.examly.springapp.service.ThemeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
