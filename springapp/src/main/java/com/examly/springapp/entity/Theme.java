@@ -1,6 +1,6 @@
 package com.examly.springapp.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 

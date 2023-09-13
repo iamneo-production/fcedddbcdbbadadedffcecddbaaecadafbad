@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.examly.springapp.entity.Theme;
 import com.examly.springapp.entity.Gift;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
