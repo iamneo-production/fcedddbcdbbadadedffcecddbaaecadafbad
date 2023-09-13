@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Login from './Login'; // Replace './Login' with the correct path to your 'Login.js' file
 
 // Home component
 const Home = () => (

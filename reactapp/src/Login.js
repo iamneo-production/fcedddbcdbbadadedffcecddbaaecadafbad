@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 
 function Login() {
+  const history = useHistory(); // Initialize useHistory
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -14,39 +17,24 @@ function Login() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Simulate a successful login (you should replace this with your actual login logic)
+    const isAuthenticated = true;
+
+    if (isAuthenticated) {
+      // Redirect to the dashboard page
+      history.push('/dashboard');
+    }
+  };
+
   return (
-    <div data-testid="loginBox">
+    <div>
       <h1>Login</h1>
-      <form>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            data-testid="email"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            data-testid="password"
-          />
-        </div>
-        <button type="submit" data-testid="loginButton">
-          Login
-        </button>
+      <form onSubmit={handleSubmit}>
+        {/* Form inputs and submit button */}
       </form>
-      <p data-testid="signupLink">
-        Don't have an account? <a href="/signup">Sign up</a>
-      </p>
     </div>
   );
 }
