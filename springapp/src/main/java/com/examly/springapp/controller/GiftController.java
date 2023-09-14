@@ -19,9 +19,9 @@ public class GiftController {
         this.giftService.addGift(gift);
     }
 
-    @GetMapping("/{giftId}")
-    public GiftModel getGift(@PathVariable Integer giftId){
-        return this.giftService.getGift(giftId);
+    @GetMapping("/gift")
+    public GiftModel getGift(@RequestParam Integer id){
+        return this.giftService.getGift(id);
     }
 
     @GetMapping("/getGifts")
