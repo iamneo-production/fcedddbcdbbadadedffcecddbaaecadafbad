@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
+@Tag(description = "Admin Endpoints", name = "Gift Controller")
 public class GiftController {
     @Autowired
     private GiftService giftService;

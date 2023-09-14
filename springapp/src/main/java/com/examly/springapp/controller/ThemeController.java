@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
+@Tag(description = "Admin Endpoints", name = "Theme Controller")
 public class ThemeController {
     @Autowired
     private ThemeService themeService;

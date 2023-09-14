@@ -11,7 +11,7 @@ import com.examly.springapp.service.AdminService;
 
 @RestController
 @RequestMapping("/admin")
-
+@Tag(description = "Admin Endpoints", name = "Admin Controller")
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
