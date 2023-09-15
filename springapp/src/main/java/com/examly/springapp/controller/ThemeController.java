@@ -24,7 +24,7 @@ public class ThemeController {
         return this.themeService.getTheme(themeId);
     }
 
-    @GetMapping("/getThemes")
+    @GetMapping("/theme")
     public List<ThemeModel> getThemes(){
         return this.themeService.getThemes();
     }
