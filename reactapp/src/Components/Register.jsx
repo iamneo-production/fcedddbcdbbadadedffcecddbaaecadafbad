@@ -16,7 +16,7 @@ class Register extends Component {
                 username: '',
                 mobileNumber: '',
                 password: '',
-                confirm pass
+                confirmPassword: ''
             },
             submitted: false,
         }
