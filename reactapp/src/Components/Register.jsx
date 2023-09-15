@@ -14,8 +14,9 @@ class Register extends Component {
                 admin: '',
                 email: '',
                 username: '',
-                phon: '',
-                date: ''
+                mobileNumber: '',
+                password: '',
+                confirm pass
             },
             submitted: false,
         }
