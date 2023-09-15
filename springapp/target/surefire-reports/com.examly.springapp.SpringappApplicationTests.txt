@@ -1,36 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 5.588 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
-testGetGiftById  Time elapsed: 0.19 s  <<< FAILURE!
-java.lang.AssertionError: Content type not set
-	at com.examly.springapp.SpringappApplicationTests.testGetGiftById(SpringappApplicationTests.java:80)
-
-testGetThemeAll  Time elapsed: 0.01 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetThemeAll(SpringappApplicationTests.java:54)
-
-testGetOrderAll  Time elapsed: 0.006 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetOrderAll(SpringappApplicationTests.java:32)
-
-testGetGiftAll  Time elapsed: 0.07 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetGiftAll(SpringappApplicationTests.java:89)
-
-testGetOrderById  Time elapsed: 0.006 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetOrderById(SpringappApplicationTests.java:43)
-
-testGetThemeById  Time elapsed: 0.005 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetThemeById(SpringappApplicationTests.java:66)
-
-test_case2  Time elapsed: 0.002 s  <<< FAILURE!
-java.lang.AssertionError
-	at com.examly.springapp.SpringappApplicationTests.test_case2(SpringappApplicationTests.java:108)
-
-test_case4  Time elapsed: 0.002 s  <<< FAILURE!
-java.lang.AssertionError
-	at com.examly.springapp.SpringappApplicationTests.test_case4(SpringappApplicationTests.java:124)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.212 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+testGetThemeById  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'themeController' method 
+com.examly.springapp.controller.ThemeController#getThemes()
+to {GET [/admin/theme]}: There is already 'themeController' bean method
+com.examly.springapp.controller.ThemeController#getTheme(String) mapped.
+Caused by: java.lang.IllegalStateException: 
+Ambiguous mapping. Cannot map 'themeController' method 
+com.examly.springapp.controller.ThemeController#getThemes()
+to {GET [/admin/theme]}: There is already 'themeController' bean method
+com.examly.springapp.controller.ThemeController#getTheme(String) mapped.
 

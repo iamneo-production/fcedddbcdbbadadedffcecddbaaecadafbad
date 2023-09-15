@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
+import java.util.Arrays;
 
 @RestController
 @RequestMapping("/admin")
@@ -19,9 +20,9 @@ public class ThemeController {
         this.themeService.addTheme(theme);
     }
 
-    @GetMapping("/{themeId}")
-    public ThemeModel getTheme(@PathVariable Integer themeId){
-        return this.themeService.getTheme(themeId);
+    @GetMapping("/theme")
+    public List<ThemeModel> getTheme(@RequestParam("id") String id){
+        return Arrays.asList(this.themeService.getTheme(Integer.parseInt(id)));
     }
 
     @GetMapping("/theme")
