@@ -21,7 +21,7 @@ public class GiftController {
 
     @GetMapping("/gift/{id}")
     public GiftModel getGiftById(@RequestParam Integer id){
-        return this.giftService.getGift(id);
+        return this.giftService.getGiftById(id);
     }
 
     @GetMapping("/gift")
