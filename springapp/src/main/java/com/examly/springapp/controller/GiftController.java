@@ -19,13 +19,13 @@ public class GiftController {
         this.giftService.addGift(gift);
     }
 
-    @GetMapping("/gift")
-    public GiftModel getGift(@RequestParam Integer id){
+    @GetMapping("/gift/{id}")
+    public GiftModel getGiftById(@RequestParam Integer id){
         return this.giftService.getGift(id);
     }
 
-    @GetMapping("/getGifts")
-    public List<GiftModel> getGifts(){
+    @GetMapping("/gift")
+    public List<GiftModel> getGiftByAll(){
         return this.giftService.getGifts();
     }
 

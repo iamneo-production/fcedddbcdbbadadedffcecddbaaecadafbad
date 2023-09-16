@@ -1,28 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 5.799 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
-testGetGiftById  Time elapsed: 0.169 s  <<< FAILURE!
-java.lang.AssertionError: Content type not set
-	at com.examly.springapp.SpringappApplicationTests.testGetGiftById(SpringappApplicationTests.java:80)
-
-testGetOrderAll  Time elapsed: 0.008 s  <<< FAILURE!
+Tests run: 10, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 5.279 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+testGetOrderAll  Time elapsed: 0.036 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.testGetOrderAll(SpringappApplicationTests.java:32)
-
-testGetGiftAll  Time elapsed: 0.027 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetGiftAll(SpringappApplicationTests.java:89)
 
 testGetOrderById  Time elapsed: 0.005 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.testGetOrderById(SpringappApplicationTests.java:43)
 
-test_case2  Time elapsed: 0.002 s  <<< FAILURE!
+test_case2  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.examly.springapp.SpringappApplicationTests.test_case2(SpringappApplicationTests.java:108)
 
-test_case4  Time elapsed: 0.001 s  <<< FAILURE!
+test_case4  Time elapsed: 0.002 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.examly.springapp.SpringappApplicationTests.test_case4(SpringappApplicationTests.java:124)
 
