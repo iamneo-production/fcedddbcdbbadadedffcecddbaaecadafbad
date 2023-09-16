@@ -20,13 +20,13 @@ public class ThemeController {
         this.themeService.addTheme(theme);
     }
 
-    @GetMapping("/theme")
-    public List<ThemeModel> getTheme(@RequestParam("id") String id){
+    @GetMapping("/theme/{id}")
+    public List<ThemeModel> getThemeById(@RequestParam("id") String id){
         return Arrays.asList(this.themeService.getTheme(Integer.parseInt(id)));
     }
 
     @GetMapping("/theme")
-    public List<ThemeModel> getThemes(){
+    public List<ThemeModel> getThemeAll(){
         return this.themeService.getThemes();
     }
 
