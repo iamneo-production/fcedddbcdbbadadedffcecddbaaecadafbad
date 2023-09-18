@@ -28,7 +28,7 @@ public class GiftServiceImpl implements GiftService{
     }
 
     @Override
-    public GiftModel getGift(Integer giftId) {
+    public GiftModel getGiftById(Integer giftId) {
         GiftModel giftModel= null;
         Optional<Gift> giftEntity = this.giftRepository.findById(giftId);
         if(giftEntity.isPresent()){
@@ -45,7 +45,7 @@ public class GiftServiceImpl implements GiftService{
     }
 
     @Override
-    public List<GiftModel> getGifts() {
+    public List<GiftModel> getGiftAll() {
         List<GiftModel> giftModels= new ArrayList<>();
         List<Gift> giftEntities = this.giftRepository.findAll();
         for(Gift giftEntity:giftEntities){

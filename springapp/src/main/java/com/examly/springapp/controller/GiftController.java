@@ -25,8 +25,8 @@ public class GiftController {
     }
 
     @GetMapping("/gift")
-    public List<GiftModel> getGiftByAll(){
-        return this.giftService.getGifts();
+    public List<GiftModel> getGiftAll(){
+        return this.giftService.getGiftAll();
     }
 
     @DeleteMapping("/deleteGift/{giftId}")

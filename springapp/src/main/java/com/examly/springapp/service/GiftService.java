@@ -8,6 +8,6 @@ import java.util.List;
 public interface GiftService {
     public void addGift(GiftModel gift);
     public GiftModel getGiftById(Integer giftId);
-    public List<GiftModel> getGifts();
+    public List<GiftModel> getGiftAll();
     public void deleteGift(Integer giftId);
 }
