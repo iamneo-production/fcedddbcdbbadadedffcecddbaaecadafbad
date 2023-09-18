@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface GiftService {
     public void addGift(GiftModel gift);
-    public GiftModel getGift(Integer giftId);
+    public GiftModel getGiftById(Integer giftId);
     public List<GiftModel> getGifts();
     public void deleteGift(Integer giftId);
 }
