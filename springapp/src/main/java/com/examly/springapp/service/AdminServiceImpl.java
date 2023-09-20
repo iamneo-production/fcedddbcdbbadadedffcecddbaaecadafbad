@@ -69,11 +69,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<OrderModel> viewOrderById(Integer orderId) throws Exception {
+	public List<Order> viewOrderById(Integer orderId) throws Exception {
 		Optional<Order> order = this.orderRepository.findByOrderId(orderId);
-		OrderModel orderModel = null;
+		Order orderModel = null;
 		if(order.isPresent()){
-			orderModel = OrderUtility.getOrderModel(order);
+			orderModel = OrderUtility.getOrder(order);
 		}
 		return Arrays.asList(orderModel);
 	}
