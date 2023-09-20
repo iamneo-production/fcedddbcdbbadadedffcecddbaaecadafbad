@@ -1,10 +1,10 @@
 package com.examly.springapp.service;
 
-import com.examly.springapp.model.Order;
+import com.examly.springapp.model.OrderModel;
 
 public interface OrderService {
-    public Order addOrder(Order orderModel);
-    public Order editOrder(Order orderModel, Integer orderId);
-    public Order viewOrder(Integer orderId);
+    public OrderModel addOrder(OrderModel orderModel);
+    public OrderModel editOrder(OrderModel orderModel, Integer orderId);
+    public OrderModel viewOrder(Integer orderId);
     public void deleteOrder(Integer orderId);
 }
