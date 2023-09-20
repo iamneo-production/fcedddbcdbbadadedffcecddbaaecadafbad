@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Login from './components/Login';
 import './styles.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 function App() {
   return (
@@ -19,3 +18,5 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+export default App;
