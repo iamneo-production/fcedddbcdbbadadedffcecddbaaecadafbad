@@ -1,22 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
 import Login from './components/Login';
+import Registration from './components/Registration';
 import './styles.css';
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
-      <div className="container"> {/* Use a container for proper styling */}
-        <Login />
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Login />} />
+          <Route path="Registration" element={<Registration />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
-
-export default App;
