@@ -25,12 +25,12 @@ public class GiftController {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.giftService.addGift(gift));
     }
 
-    @GetMapping("/gift")
+    @GetMapping("/gift/{id}")
     public ResponseEntity<List<GiftModel>> getGift(@RequestParam("id") String id){
        return ResponseEntity.ok(Arrays.asList(this.giftService.getGift(Integer.parseInt(id))));
     }
 
-    @GetMapping("/gifts")
+    @GetMapping("/gift")
     public ResponseEntity<List<GiftModel>> getGifts(){
         return ResponseEntity.ok(this.giftService.getGifts());
     }

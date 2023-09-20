@@ -26,12 +26,12 @@ public class ThemeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.themeService.addTheme(themeModel));
     }
 
-    @GetMapping("/theme")
+    @GetMapping("/theme/{id}")
     public ResponseEntity<List<ThemeModel>> getTheme(@RequestParam("id") String id){
         return ResponseEntity.ok(this.themeService.getTheme(Integer.parseInt(id)));
     }
 
-    @GetMapping("/themes")
+    @GetMapping("/theme")
     public ResponseEntity<List<ThemeModel>> getThemes(){
         return ResponseEntity.ok(this.themeService.getThemes());
     }
