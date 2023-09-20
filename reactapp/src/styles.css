@@ -4,7 +4,8 @@
   
   /* In your CSS file, e.g., App.css or a custom CSS file */
   .custom-navbar-bg {
-    background-color: #370707; /* Replace with your desired background color */
+    background-color: #370707;
+    justify-content: center; /* Replace with your desired background color */
   }
   /* styles.css */
   .login-page {
