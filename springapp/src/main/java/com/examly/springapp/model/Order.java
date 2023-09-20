@@ -10,7 +10,7 @@ import java.util.List;
 
 @Builder
 @Data
-public class OrderModel {
+public class Order {
 	private Integer orderId;
 	@NotBlank(message = "")
 	private String orderName;
