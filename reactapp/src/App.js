@@ -1,23 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Login from './components/Login'; // Import the Login component
+import Login from './components/Login';
 import './styles.css';
-import 'react-bootstrap/dist/react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 function App() {
   return (
-    <div>
-      <Login />
-    </div>
+    <BrowserRouter>
+      <div className="container"> {/* Use a container for proper styling */}
+        <Login />
+      </div>
+    </BrowserRouter>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
 );
-
-export default App;
