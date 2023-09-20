@@ -29,7 +29,7 @@ public class AdminController {
 		this.adminService.editTheme(themeModel,themeId);
 	}
 
-	@GetMapping("/orders")
+	@GetMapping("/order")
 	public ResponseEntity<List<Order>> viewOrders(){
 		return ResponseEntity.ok(this.adminService.viewOrders());
 	}

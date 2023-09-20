@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.examly.springapp.SpringappApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 6.046 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+testGetThemeAll  Time elapsed: 0.01 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<400>
+	at com.examly.springapp.SpringappApplicationTests.testGetThemeAll(SpringappApplicationTests.java:54)
+
+testGetOrderAll  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<400>
+	at com.examly.springapp.SpringappApplicationTests.testGetOrderAll(SpringappApplicationTests.java:32)
+
+testGetGiftAll  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<400>
+	at com.examly.springapp.SpringappApplicationTests.testGetGiftAll(SpringappApplicationTests.java:89)
+
+test_case4  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.examly.springapp.SpringappApplicationTests.test_case4(SpringappApplicationTests.java:124)
+
