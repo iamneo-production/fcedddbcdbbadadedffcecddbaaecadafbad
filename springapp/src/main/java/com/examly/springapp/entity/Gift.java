@@ -20,6 +20,4 @@ public class Gift {
 	private int giftPrice;
 	@OneToOne(mappedBy = "gift")
 	private Order order;
-	
-	
 }

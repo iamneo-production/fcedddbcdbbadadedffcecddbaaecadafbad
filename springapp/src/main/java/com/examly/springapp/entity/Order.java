@@ -1,9 +1,9 @@
 package com.examly.springapp.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import com.examly.springapp.entity.Theme;
-import com.examly.springapp.entity.Gift;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,15 +20,19 @@ import lombok.Setter;
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer orderId;
     @Column(name = "order_name")
 	private String orderName;
     @Column(name = "order_desc")
 	private String orderDescription;
-	@OneToOne
-	@JoinColumn(name="theme_id")
-	private Theme theme;
-	@OneToOne
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "order_themes",
+			joinColumns = @JoinColumn(name = "order_id"),
+			inverseJoinColumns = @JoinColumn(name = "theme_id")
+	)
+	private List<Theme> themes = new ArrayList<>();
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="gift_id")
 	private Gift gift;
     @Column(name = "order_date")

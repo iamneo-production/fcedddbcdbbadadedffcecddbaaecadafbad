@@ -15,12 +15,12 @@ public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id; 
-	@Column(name = "email")
+	@Column(name = "email", unique = true)
 	private String email;
 	@Column(name = "password")
 	private String password;
 	@Column(name = "mobile_number")
 	private String mobileNumber;
-	@Column(name = "user_role")
-	private String userRole;
+	@Column(name = "admin_role")
+	private String adminRole;
 }

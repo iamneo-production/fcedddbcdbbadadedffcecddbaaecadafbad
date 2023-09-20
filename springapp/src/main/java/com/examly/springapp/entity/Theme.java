@@ -17,6 +17,4 @@ public class Theme {
 	private String themeDetails;
 	@Column(name = "theme_price")
 	private int themePrice;
-	@OneToOne(mappedBy = "theme")
-	private Order order;
 }

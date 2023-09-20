@@ -1,12 +1,18 @@
 package com.examly.springapp.controller;
 
+import com.examly.springapp.model.GiftModel;
+import com.examly.springapp.model.OrderModel;
 import com.examly.springapp.model.ThemeModel;
 import com.examly.springapp.service.ThemeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
@@ -16,21 +22,22 @@ public class ThemeController {
     private ThemeService themeService;
 
     @PostMapping("/addTheme")
-    public void addTheme(@RequestBody ThemeModel theme) {
-        this.themeService.addTheme(theme);
-    }
-
-    @GetMapping("/theme/{id}")
-    public List<ThemeModel> getThemeById(@RequestParam("id") String id){
-        return Arrays.asList(this.themeService.getTheme(Integer.parseInt(id)));
+    public ResponseEntity<ThemeModel> addTheme(@Valid @RequestBody ThemeModel themeModel){
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.themeService.addTheme(themeModel));
     }
 
     @GetMapping("/theme")
-    public List<ThemeModel> getThemeAll(){
-        return this.themeService.getThemes();
+    public ResponseEntity<List<ThemeModel>> getTheme(@RequestParam("id") String id){
+        return ResponseEntity.ok(this.themeService.getTheme(Integer.parseInt(id)));
+    }
+
+    @GetMapping("/themes")
+    public ResponseEntity<List<ThemeModel>> getThemes(){
+        return ResponseEntity.ok(this.themeService.getThemes());
     }
 
     @DeleteMapping("/deleteTheme/{themeId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTheme(@PathVariable Integer themeId){
         this.themeService.deleteTheme(themeId);
     }
