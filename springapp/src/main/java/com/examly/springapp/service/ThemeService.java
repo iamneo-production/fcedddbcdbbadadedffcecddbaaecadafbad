@@ -8,8 +8,8 @@ import java.util.List;
 
 
 public interface ThemeService {
-    public void addTheme(ThemeModel theme);
-    public ThemeModel getTheme(Integer themeId);
+    public ThemeModel addTheme(ThemeModel theme);
+    public List<ThemeModel> getTheme(Integer themeId);
     public List<ThemeModel> getThemes();
     public void deleteTheme(Integer themeId);
 }

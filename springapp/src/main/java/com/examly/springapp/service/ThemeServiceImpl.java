@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,17 +19,18 @@ public class ThemeServiceImpl implements ThemeService {
     private ThemeRepository themeRepository;
 
     @Override
-    public void addTheme(ThemeModel themeModel) {
+    public ThemeModel addTheme(ThemeModel themeModel) {
         Theme themeEntity = new Theme();
         themeEntity.setThemeName(themeModel.getThemeName());
         themeEntity.setThemeDetails(themeModel.getThemeDetails());
         themeEntity.setThemePrice(themeModel.getThemePrice());
         this.themeRepository.save(themeEntity);
-
+        themeModel.setThemeId(themeEntity.getId());
+        return themeModel;
     }
 
     @Override
-    public ThemeModel getTheme(Integer themeId) {
+    public List<ThemeModel> getTheme(Integer themeId) {
         ThemeModel themeModel = null;
         Optional<Theme> themeEntity = this.themeRepository.findById(themeId);
         if (themeEntity.isPresent()) {
@@ -40,7 +42,7 @@ public class ThemeServiceImpl implements ThemeService {
                     .build();
 
         }
-        return themeModel;
+        return Arrays.asList(themeModel);
     }
 
     @Override
