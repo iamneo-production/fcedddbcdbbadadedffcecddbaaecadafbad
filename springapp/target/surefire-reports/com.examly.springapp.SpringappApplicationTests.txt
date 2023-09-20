@@ -1,12 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 6.58 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
-testGetOrderAll  Time elapsed: 0.015 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<400>
-	at com.examly.springapp.SpringappApplicationTests.testGetOrderAll(SpringappApplicationTests.java:32)
-
-test_case4  Time elapsed: 0.002 s  <<< FAILURE!
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.812 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+test_case4  Time elapsed: 0.007 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.examly.springapp.SpringappApplicationTests.test_case4(SpringappApplicationTests.java:124)
 
