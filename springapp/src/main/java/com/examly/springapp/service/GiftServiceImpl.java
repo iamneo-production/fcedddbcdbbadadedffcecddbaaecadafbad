@@ -18,22 +18,29 @@ public class GiftServiceImpl implements GiftService{
     private GiftRepository giftRepository;
 
     @Override
-    public void addGift(GiftModel gift) {
-          Gift giftEntity = new Gift();
-                giftEntity.setGiftName(gift.getGiftName());
-                giftEntity.setGiftImageUrl(gift.getGiftImageUrl());
-                giftEntity.setGiftDetails(gift.getGiftDetails());
-                giftEntity.setGiftPrice(gift.getGiftPrice());
+    public GiftModel addGift(GiftModel gift) {
+        Gift giftEntity = new Gift();
+        giftEntity.setGiftName(gift.getGiftName());
+        giftEntity.setGiftImageUrl(gift.getGiftImageUrl());
+        giftEntity.setGiftDetails(gift.getGiftDetails());
+        giftEntity.setGiftPrice(gift.getGiftPrice());
         this.giftRepository.save(giftEntity);
+        return GiftModel.builder().giftId(giftEntity.getId())
+                .giftName(gift.getGiftName())
+                .giftDetails(gift.getGiftDetails())
+                .giftPrice(giftEntity.getGiftPrice())
+                .giftImageUrl(giftEntity.getGiftImageUrl())
+                .build();
     }
 
     @Override
-    public GiftModel getGiftById(Integer giftId) {
+    public GiftModel getGift(Integer giftId) {
         GiftModel giftModel= null;
         Optional<Gift> giftEntity = this.giftRepository.findById(giftId);
         if(giftEntity.isPresent()){
             Gift gift=giftEntity.get();
             giftModel= giftModel.builder()
+                    .giftId(gift.getId())
                     .giftName(gift.getGiftName())
                     .giftImageUrl(gift.getGiftImageUrl())
                     .giftDetails(gift.getGiftDetails())
@@ -45,7 +52,7 @@ public class GiftServiceImpl implements GiftService{
     }
 
     @Override
-    public List<GiftModel> getGiftAll() {
+    public List<GiftModel> getGifts() {
         List<GiftModel> giftModels= new ArrayList<>();
         List<Gift> giftEntities = this.giftRepository.findAll();
         for(Gift giftEntity:giftEntities){
