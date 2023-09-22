@@ -75,6 +75,9 @@ public class OrderServiceImpl implements OrderService {
             Gift giftEntity = orderEntity.getGift();
             giftEntity.setGiftName(giftModel.getGiftName());
             giftEntity.setGiftImageUrl(giftModel.getGiftImageUrl());
+            giftEntity = orderEntity.getGift();
+            giftEntity.setGiftName(giftModel.getGiftName());
+            giftEntity.setGiftImageUrl(giftModel.getGiftImageUrl());
             giftEntity.setGiftPrice(giftModel.getGiftPrice());
             giftEntity.setGiftDetails(giftModel.getGiftDetails());
 
