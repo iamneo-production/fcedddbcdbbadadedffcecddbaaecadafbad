@@ -1,6 +1,6 @@
 package com.examly.springapp.controller;
 
-import com.examly.springapp.model.OrderModel;
+import com.examly.springapp.model.Order;
 import com.examly.springapp.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,17 +17,17 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/user/addOrder")
-    public ResponseEntity<OrderModel> addOrder(@Valid @RequestBody OrderModel orderModel){
+    public ResponseEntity<Order> addOrder(@Valid @RequestBody Order orderModel){
         return ResponseEntity.status(HttpStatus.CREATED).body(this.orderService.addOrder(orderModel));
     }
 
     @PutMapping("/user/editOrder/{orderId}")
-    public ResponseEntity<OrderModel> editOrder(@Valid @RequestBody OrderModel orderModel, @PathVariable Integer orderId){
+    public ResponseEntity<Order> editOrder(@Valid @RequestBody Order orderModel, @PathVariable Integer orderId){
         return ResponseEntity.ok(this.orderService.editOrder(orderModel, orderId));
     }
 
     @GetMapping("/user/{orderId}")
-    public ResponseEntity<OrderModel> viewOrderById(@PathVariable Integer orderId){
+    public ResponseEntity<Order> viewOrderById(@PathVariable Integer orderId){
         return ResponseEntity.ok(this.orderService.viewOrder(orderId));
     }
 

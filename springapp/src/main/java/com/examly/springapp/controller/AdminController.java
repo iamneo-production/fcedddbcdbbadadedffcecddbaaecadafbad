@@ -35,7 +35,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/order/{id}")
-	public ResponseEntity<List<OrderModel>> viewOrderById(@RequestParam("id") String orderId) throws Exception {
+	public ResponseEntity<List<Order>> viewOrderById(@RequestParam("id") String orderId) throws Exception {
 		return ResponseEntity.ok(this.adminService.viewOrderById(Integer.parseInt(orderId)));
 	}
 
