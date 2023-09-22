@@ -1,7 +1,7 @@
 package com.examly.springapp.service;
 
 import com.examly.springapp.entity.Admin;
-import com.examly.springapp.entity.Order;
+import com.examly.springapp.entity.Orders;
 import com.examly.springapp.entity.Theme;
 import com.examly.springapp.entity.User;
 import com.examly.springapp.model.AdminModel;
@@ -64,7 +64,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<Order> viewOrders(){
+	public List<Orders> viewOrders(){
 		return this.orderRepository.findAll();
 	}
 

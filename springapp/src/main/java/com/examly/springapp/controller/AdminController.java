@@ -30,7 +30,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/order")
-	public ResponseEntity<List<Order>> viewOrders(){
+	public ResponseEntity<List<Orders>> viewOrders(){
 		return ResponseEntity.ok(this.adminService.viewOrders());
 	}
 
