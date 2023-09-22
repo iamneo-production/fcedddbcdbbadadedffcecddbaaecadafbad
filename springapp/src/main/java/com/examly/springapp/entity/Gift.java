@@ -19,5 +19,5 @@ public class Gift {
 	@Column(name = "gift_price")
 	private int giftPrice;
 	@OneToOne(mappedBy = "gift")
-	private Order order;
+	private Orders order;
 }

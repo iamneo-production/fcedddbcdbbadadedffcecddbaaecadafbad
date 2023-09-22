@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderModel addOrder(OrderModel orderModel) {
-        Orders orderEntity = new Order();
+        Orders orderEntity = new Orders();
 
         GiftModel giftModel = orderModel.getGift();
         Gift giftEntity = new Gift();
@@ -68,7 +68,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderModel editOrder(OrderModel orderModel, Integer orderId) {
-        Optional<Order> order = this.orderRepository.findById(orderId);
+        Optional<Orders> order = this.orderRepository.findById(orderId);
         if(order.isPresent()){
             Orders orderEntity = order.get();
             GiftModel giftModel = orderModel.getGift();
@@ -114,7 +114,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderModel viewOrder(Integer orderId) {
-        Optional<Order> order = this.orderRepository.findByOrderId(orderId);
+        Optional<Orders> order = this.orderRepository.findByOrderId(orderId);
         OrderModel orderModel = null;
         if(order.isPresent()){
             orderModel = OrderUtility.getOrderModel(order);

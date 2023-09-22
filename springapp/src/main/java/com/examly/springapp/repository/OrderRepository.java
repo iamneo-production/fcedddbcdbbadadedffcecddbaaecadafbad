@@ -1,6 +1,6 @@
 package com.examly.springapp.repository;
 
-import com.examly.springapp.entity.Order;
+import com.examly.springapp.entity.Orders;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order, Integer> {
+public interface OrderRepository extends JpaRepository<Orders, Integer> {
 
-    public Optional<Order> findByOrderId(Integer orderId);
+    public Optional<Orders> findByOrderId(Integer orderId);
 
     public void deleteOrderByOrderId(Integer orderId);
 }

@@ -1,6 +1,6 @@
 package com.examly.springapp.controller;
 
-import com.examly.springapp.entity.Order;
+import com.examly.springapp.entity.Orders;
 import com.examly.springapp.model.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

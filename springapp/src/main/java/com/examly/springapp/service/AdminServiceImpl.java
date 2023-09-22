@@ -70,7 +70,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<OrderModel> viewOrderById(Integer orderId) throws Exception {
-		Optional<Order> order = this.orderRepository.findByOrderId(orderId);
+		Optional<Orders> order = this.orderRepository.findByOrderId(orderId);
 		OrderModel orderModel = null;
 		if(order.isPresent()){
 			orderModel = OrderUtility.getOrderModel(order);

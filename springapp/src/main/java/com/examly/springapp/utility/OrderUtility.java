@@ -1,7 +1,7 @@
 package com.examly.springapp.utility;
 
 import com.examly.springapp.entity.Gift;
-import com.examly.springapp.entity.Order;
+import com.examly.springapp.entity.Orders;
 import com.examly.springapp.entity.Theme;
 import com.examly.springapp.model.GiftModel;
 import com.examly.springapp.model.OrderModel;
@@ -13,9 +13,9 @@ import java.util.Optional;
 
 public class OrderUtility {
 
-    public static OrderModel getOrderModel(Optional<Order> order) {
+    public static OrderModel getOrderModel(Optional<Orders> order) {
         OrderModel orderModel;
-        Order orderEntity = order.get();
+        Orders orderEntity = order.get();
 
         Gift giftEntity = orderEntity.getGift();
         GiftModel giftModel = GiftModel.builder().giftId(giftEntity.getId())
