@@ -4,7 +4,7 @@ import com.examly.springapp.entity.Gift;
 import com.examly.springapp.entity.Orders;
 import com.examly.springapp.entity.Theme;
 import com.examly.springapp.model.GiftModel;
-import com.examly.springapp.model.OrderModel;
+import com.examly.springapp.model.Order;
 import com.examly.springapp.model.ThemeModel;
 
 import java.util.ArrayList;

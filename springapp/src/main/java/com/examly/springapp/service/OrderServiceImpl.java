@@ -4,7 +4,7 @@ import com.examly.springapp.entity.Gift;
 import com.examly.springapp.entity.Orders;
 import com.examly.springapp.entity.Theme;
 import com.examly.springapp.model.GiftModel;
-import com.examly.springapp.model.OrderModel;
+import com.examly.springapp.model.Order;
 import com.examly.springapp.model.ThemeModel;
 import com.examly.springapp.repository.OrderRepository;
 import com.examly.springapp.repository.ThemeRepository;
@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
     private ThemeRepository themeRepository;
 
     @Override
-    public OrderModel addOrder(OrderModel orderModel) {
+    public Order addOrder(Order orderModel) {
         Orders orderEntity = new Orders();
 
         GiftModel giftModel = orderModel.getGift();
@@ -67,7 +67,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderModel editOrder(OrderModel orderModel, Integer orderId) {
+    public Order editOrder(Order orderModel, Integer orderId) {
         Optional<Orders> order = this.orderRepository.findById(orderId);
         if(order.isPresent()){
             Orders orderEntity = order.get();
@@ -113,7 +113,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderModel viewOrder(Integer orderId) {
+    public Order viewOrder(Integer orderId) {
         Optional<Orders> order = this.orderRepository.findByOrderId(orderId);
         OrderModel orderModel = null;
         if(order.isPresent()){

@@ -6,7 +6,7 @@ import com.examly.springapp.entity.Theme;
 import com.examly.springapp.entity.User;
 import com.examly.springapp.model.AdminModel;
 import com.examly.springapp.model.LoginModel;
-import com.examly.springapp.model.OrderModel;
+import com.examly.springapp.model.Order;
 import com.examly.springapp.model.ThemeModel;
 import com.examly.springapp.repository.OrderRepository;
 import com.examly.springapp.repository.ThemeRepository;
@@ -69,9 +69,9 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<OrderModel> viewOrderById(Integer orderId) throws Exception {
+	public List<Order> viewOrderById(Integer orderId) throws Exception {
 		Optional<Orders> order = this.orderRepository.findByOrderId(orderId);
-		OrderModel orderModel = null;
+		Order orderModel = null;
 		if(order.isPresent()){
 			orderModel = OrderUtility.getOrderModel(order);
 		}
