@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './components/User/Homepage';
 import Myorder from './components/User/Myorder';
 import PlaceOrder from './components/User/PlaceOrder';
-import NoPage from './components/NoPage';
 import Layout from './components/Layout';
 import Login from './components/Login'; 
 import Registration from './components/Registration'; 
@@ -31,12 +30,9 @@ export default function App() {
         <Route path="AdminGifts" element={<AdminGifts />} />
         <Route path="Adminvieworders" element={<Adminvieworders />} />
         <Route path="AdminThemes" element={<AdminThemes />} /> {/* Add a route for AdminGifts */}
-        <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
   </BrowserRouter>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);

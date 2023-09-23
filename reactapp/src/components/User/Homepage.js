@@ -8,7 +8,7 @@ const products = [
     id: 1,
     name: 'Wooden Frame',
     price: 19.99,
-    imageUrl: 'https://img.freepik.com/free-vector/realistic-brown-wooden-gallery-frame_1409-3075.jpg?w=2000',
+    imageUrl: 'https://via.placeholder.com/150',
   },
   {
     id: 2,
