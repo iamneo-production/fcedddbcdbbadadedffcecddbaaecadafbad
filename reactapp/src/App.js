@@ -19,10 +19,11 @@ export default function App() {
     <Routes>
     <Route path="/" element={<Layout />}>
         <Route index element={<Homepage />} />
-        <Route path="Homepage" element={<Home />} />
+        <Route path="Homepage" element={<Homepage />} />
         <Route path="/myorder/:giftName/:giftPrice" component={Myorder} />
         <Route path="Myorder" element={<Myorder />} />
         <Route path="PlaceOrder" element={<PlaceOrder />} />
+        <Route path="Login" element={<Login />} />
         <Route path="Registration" element={<Registration />} />
         <Route path="AdminGifts" element={<AdminGifts />} />
         <Route path="Adminvieworders" element={<Adminvieworders />} />
