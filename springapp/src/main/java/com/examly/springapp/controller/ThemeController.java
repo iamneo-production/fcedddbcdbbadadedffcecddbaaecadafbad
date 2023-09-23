@@ -1,7 +1,6 @@
 package com.examly.springapp.controller;
 
 import com.examly.springapp.model.GiftModel;
-import com.examly.springapp.model.OrderModel;
 import com.examly.springapp.model.ThemeModel;
 import com.examly.springapp.service.ThemeService;
 import io.swagger.v3.oas.annotations.tags.Tag;

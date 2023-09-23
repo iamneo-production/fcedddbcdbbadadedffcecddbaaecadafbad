@@ -13,8 +13,8 @@ import java.util.Optional;
 
 public class OrderUtility {
 
-    public static OrderModel getOrderModel(Optional<Orders> order) {
-        OrderModel orderModel;
+    public static Order getOrderModel(Optional<Orders> order) {
+        Order orderModel;
         Orders orderEntity = order.get();
 
         Gift giftEntity = orderEntity.getGift();
@@ -36,7 +36,7 @@ public class OrderUtility {
             themeModels.add(themeModel);
         }
 
-        orderModel = OrderModel.builder().orderId(orderEntity.getOrderId())
+        orderModel = Order.builder().orderId(orderEntity.getOrderId())
                 .orderName(orderEntity.getOrderName())
                 .orderDescription(orderEntity.getOrderDescription())
                 .orderPrice(orderEntity.getOrderPrice())

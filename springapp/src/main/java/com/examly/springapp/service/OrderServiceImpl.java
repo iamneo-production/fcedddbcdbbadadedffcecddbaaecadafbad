@@ -115,7 +115,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order viewOrder(Integer orderId) {
         Optional<Orders> order = this.orderRepository.findByOrderId(orderId);
-        OrderModel orderModel = null;
+        Order orderModel = null;
         if(order.isPresent()){
             orderModel = OrderUtility.getOrderModel(order);
         }
