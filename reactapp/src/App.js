@@ -12,6 +12,8 @@ import 'react-bootstrap/dist/react-bootstrap';
 import AdminGifts from './components/Admin/AdminGifts';
 import AdminThemes from './components/Admin/AdminThemes';
 import Adminvieworders from './components/Admin/Adminvieworders';
+import PaymentForm from './components/User/PaymentForm';
+import ThankYou from './components/User/ThankYou';
 
 export default function App() {
   return (
@@ -24,6 +26,8 @@ export default function App() {
         <Route path="Myorder" element={<Myorder />} />
         <Route path="PlaceOrder" element={<PlaceOrder />} />
         <Route path="Login" element={<Login />} />
+        <Route path="PaymentForm" element={<PaymentForm />} />
+        <Route path="ThankYou" element={<ThankYou />} />
         <Route path="Registration" element={<Registration />} />
         <Route path="AdminGifts" element={<AdminGifts />} />
         <Route path="Adminvieworders" element={<Adminvieworders />} />

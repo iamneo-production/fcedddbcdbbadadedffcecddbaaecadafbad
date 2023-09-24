@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import ThankYou from './ThankYou'; 
+import { Link } from 'react-router-dom';
 
 class PaymentForm extends Component {
   constructor(props) {
@@ -78,7 +79,9 @@ class PaymentForm extends Component {
                 />
               </Form.Group>
               <Button variant="primary" type="submit">
+              <Link to="/ThankYou">
                 Confirm Payment
+                </Link>
               </Button>
             </Form>
           </Col>

@@ -31,7 +31,6 @@ class PlaceOrder extends Component {
     this.setState({ [name]: value });
   };
 
-  
 
   removeOrder = (index) => {
     const { orders } = this.state;
@@ -178,7 +177,9 @@ class PlaceOrder extends Component {
         </Container>
         <div className="text-center">
           <Button variant="primary">
+          <Link to="/PaymentForm">
             Pay
+            </Link>
           </Button>
         </div>
       </div>

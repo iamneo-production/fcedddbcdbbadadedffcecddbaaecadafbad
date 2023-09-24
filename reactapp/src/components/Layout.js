@@ -29,6 +29,12 @@ const Layout = () => {
           <li>
             <Link to="/Adminvieworders">Admin view orders</Link>
           </li>
+          <li>
+            <Link to="/Payment">Payment</Link>
+          </li>
+          <li>
+            <Link to="/ThankYou">Thank you</Link>
+          </li>
         </ul>
       </nav>
 

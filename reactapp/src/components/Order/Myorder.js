@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Container, Row, Col, Form, Button, Card, Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const themesData = [
   { id: 1, name: 'Theme 1', price: 5.99 },
@@ -44,7 +45,7 @@ const MyOrders = () => {
   .catch((error) => {
     console.error('Error fetching themes:', error);
   });
-}, [location]);
+//}, [location]);
 
   const formatCurrency = (amount) => {
     const formatter = new Intl.NumberFormat('en-IN', {
