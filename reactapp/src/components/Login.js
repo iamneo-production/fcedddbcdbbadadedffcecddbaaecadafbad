@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import '../styles.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
+const Login =(props) => {
+  const navigate = useNavigate();
 
-function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+      const adminResponse = await axios.post('http://localhost:8080/admin/login', { email, password });
+      console.log("handleLogin",adminResponse);
+      if ( !adminResponse.data) {
+        navigate('/AdminGifts');
+      }
+      else {
+        const userResponse = await axios.post('http://localhost:8080/user/login', { email, password });
+        if (userResponse.data) {
+           navigate('/');
+        }
+      }
+
+  };
+
   return (
     <div className="login-page">
       <Navbar expand="lg" className="custom-navbar-bg">
@@ -18,15 +40,17 @@ function Login() {
       <Container className="d-flex justify-content-center mt-5">
         <Form>
           <Form.Group controlId="formBasicEmail" className="mt-3">
-            <Form.Control type="email" placeholder="Enter Email" style={{ width: '350px' }} />
+            <Form.Control type="email" placeholder="Enter Email" style={{ width: '350px' }} onChange={(e) => setEmail(e.target.value)} />
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword" className="mt-3"> {/* Increased margin-top */}
-            <Form.Control type="password" placeholder="Enter Password" style={{ width: '350px' }} />
+          <Form.Group controlId="formBasicPassword" className="mt-3">
+            <Form.Control type="password" placeholder="Enter Password" style={{ width: '350px' }} onChange={(e) => setPassword(e.target.value)} />
           </Form.Group>
           
-          <div className="d-flex justify-content-center mt-4"> {/* Increased margin-top */}
-          <Button type="submit" variant="primary">Login</Button> 
+          <div className="d-flex justify-content-center mt-4">
+            <Button type="submit" variant="primary" onClick={handleLogin}>
+              Login
+            </Button>
           </div>
         </Form>
       </Container>
@@ -39,7 +63,3 @@ function Login() {
 }
 
 export default Login;
-
-
-
-
