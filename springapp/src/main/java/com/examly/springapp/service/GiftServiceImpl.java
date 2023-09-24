@@ -24,13 +24,15 @@ public class GiftServiceImpl implements GiftService{
         giftEntity.setGiftImageUrl(gift.getGiftImageUrl());
         giftEntity.setGiftDetails(gift.getGiftDetails());
         giftEntity.setGiftPrice(gift.getGiftPrice());
+        giftEntity.setQuantity(gift.getQuantity());
         this.giftRepository.save(giftEntity);
         return GiftModel.builder().giftId(giftEntity.getId())
                 .giftName(gift.getGiftName())
                 .giftDetails(gift.getGiftDetails())
                 .giftPrice(giftEntity.getGiftPrice())
                 .giftImageUrl(giftEntity.getGiftImageUrl())
-                .build();
+                .giftQuantity(giftEntity.getQuantity());
+                 build();
     }
 
     @Override

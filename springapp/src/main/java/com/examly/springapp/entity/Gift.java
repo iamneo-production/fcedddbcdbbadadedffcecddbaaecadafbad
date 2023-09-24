@@ -18,6 +18,8 @@ public class Gift {
 	private String giftDetails;
 	@Column(name = "gift_price")
 	private int giftPrice;
+	@Column(name = "quantity")
+	private int quantity;
 	@OneToOne(mappedBy = "gift")
 	private Orders order;
 }
