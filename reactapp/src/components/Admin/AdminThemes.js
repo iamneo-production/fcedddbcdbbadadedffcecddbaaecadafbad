@@ -8,11 +8,11 @@ class AdminThemes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      themes: [], // You should manage your theme data here
+      themes: [], 
       themeName: '',
       themeDetails: '',
-      themePrice: '', // Add the themePrice field
-      editingIndex: -1, // Track the index of the theme being edited, -1 means no theme is being edited
+      themePrice: '', 
+      editingIndex: -1, 
     };
   }
 
@@ -29,27 +29,27 @@ class AdminThemes extends Component {
       updatedThemes[editingIndex] = {
         themeName,
         themeDetails,
-        themePrice: parseFloat(themePrice), // Parse the themePrice as a float
+        themePrice: parseFloat(themePrice), 
       };
 
       this.setState({
         themes: updatedThemes,
-        editingIndex: -1, // Stop editing
+        editingIndex: -1, 
         themeName: '',
         themeDetails: '',
-        themePrice: '', // Reset the themePrice field
+        themePrice: '',  
       });
     } else {
       const newTheme = {
         themeName,
         themeDetails,
-        themePrice: parseFloat(themePrice), // Parse the themePrice as a float
+        themePrice: parseFloat(themePrice),  
       };
       this.setState({
         themes: [...themes, newTheme],
         themeName: '',
         themeDetails: '',
-        themePrice: '', // Reset the themePrice field
+        themePrice: '', 
       });
     }
     this.handleAddTheme(); 
@@ -81,7 +81,7 @@ class AdminThemes extends Component {
     };
 
       const response = await axios.put(
-        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editTheme/${themeName}`, // Adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editTheme/${themeName}`,
         editedTheme
       );
   
@@ -107,11 +107,11 @@ class AdminThemes extends Component {
       return;
     }
   
-    const themeName = themes[index].themeName; // Replace 'themeId' with the actual property name that holds the theme's ID
+    const themeName = themes[index].themeName;  
   
     try {
       const response = await axios.delete(
-        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteTheme/${themeName}`, // Adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteTheme/${themeName}`,  
       );
   
       console.log('Theme deleted:', response.data);
@@ -159,10 +159,10 @@ class AdminThemes extends Component {
 
     this.setState({
       themes: updatedThemes,
-      editingIndex: -1, // Stop editing
+      editingIndex: -1,  
       themeName: '',
       themeDetails: '',
-      themePrice: '', // Reset the themePrice field
+      themePrice: '',  
     });
   };
 
@@ -218,7 +218,7 @@ class AdminThemes extends Component {
                             name="themeName"
                             value={themeName}
                             onChange={(e) => this.handleInputChange(e)}
-                            style={{ width: '100px' }} // Set a fixed width for the input field
+                            style={{ width: '100px' }}  
                           />
                         ) : (
                           theme.themeName
@@ -231,7 +231,7 @@ class AdminThemes extends Component {
                             name="themePrice"
                             value={themePrice}
                             onChange={(e) => this.handleInputChange(e)}
-                            style={{ width: '100px' }} // Set a fixed width for the input field
+                            style={{ width: '100px' }}  
                           />
                         ) : (
                           theme.themePrice
@@ -244,7 +244,7 @@ class AdminThemes extends Component {
                             name="themeDetails"
                             value={themeDetails}
                             onChange={(e) => this.handleInputChange(e)}
-                            style={{ width: '100px' }} // Set a fixed width for the input field
+                            style={{ width: '100px' }}  
                           />
                         ) : (
                           theme.themeDetails
