@@ -32,7 +32,7 @@ public class GiftServiceImpl implements GiftService{
                 .giftPrice(giftEntity.getGiftPrice())
                 .giftImageUrl(giftEntity.getGiftImageUrl())
                 .giftQuantity(giftEntity.getQuantity());
-                 build();
+                .build();
     }
 
     @Override
