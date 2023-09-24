@@ -188,6 +188,9 @@ class AdminThemes extends Component {
                 <Link to="/Adminvieworders" className="nav-link" style={{ color: 'white', fontSize: '20px' }}>
                   Orders
                 </Link>
+                <Link to="/Login" className="nav-link" style={{ color: 'white', fontSize: '20px' }}>
+                Logout
+              </Link>
               </div>
             </div>
           </Nav>
