@@ -82,7 +82,7 @@ class AdminGifts extends Component {
   handleAddGift = async () => {
     const { giftName, giftPrice, giftImageUrl, quantity, giftDetails } = this.state;
       const response = await axios.post(
-        'https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/addGift', {
+        'https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/swagger-ui/index.html#/admin/addGift', {
         giftName,
         giftPrice,
         giftImageUrl,
@@ -111,7 +111,7 @@ class AdminGifts extends Component {
       };
 
       const response = await axios.put(
-        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editGift/${giftName}`, // You may need to adjust the URL structure based on your server's API
+        `/admin/editGift/${giftName}`, // You may need to adjust the URL structure based on your server's API
         editedGift
       );
 
@@ -139,11 +139,11 @@ class AdminGifts extends Component {
         return;
       }
 
-      const giftName = gifts[index].giftName; // Replace 'id' with the actual property name that holds the gift's ID
+      const giftName = gifts[index].giftName; 
 
       try {
         const response = await axios.delete(
-          `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteGift/${giftName}` // Adjust the URL structure based on your server's API
+          `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteGift/${giftName}` 
         );
 
         console.log('Gift deleted:', response.data);
