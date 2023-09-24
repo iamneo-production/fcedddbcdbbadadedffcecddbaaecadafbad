@@ -14,6 +14,7 @@ const MyOrders = () => {
   const location = useLocation();
   const [giftModel, setGiftModel] = useState('');
   const [orderPrice, setOrderPrice] = useState('');
+  const [themesData, setThemesData] = useState([]);
   const handleThemeCheckboxChange = (themeId) => {
     setSelectedThemes((prevSelectedThemes) => {
       if (prevSelectedThemes.includes(themeId)) {
@@ -34,7 +35,17 @@ const MyOrders = () => {
       setOrderPrice(decodeURIComponent(paramPrice));
     }
   }, [location]);
-  // Format currency in Rupees
+
+  axios
+  .get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/theme')
+  .then((response) => {
+    setThemesData(response.data);
+  })
+  .catch((error) => {
+    console.error('Error fetching themes:', error);
+  });
+}, [location]);
+
   const formatCurrency = (amount) => {
     const formatter = new Intl.NumberFormat('en-IN', {
       style: 'currency',

@@ -1,7 +1,29 @@
 .App {
     background-color: white;
   }
-  
+  /* Add this CSS to your stylesheet */
+.nav-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Display the menu items horizontally */
+  justify-content: space-around; /* Spread menu items evenly */
+  background-color: #333; /* Background color of the menu */
+}
+
+.nav-menu li {
+  padding: 10px; /* Adjust the padding to your liking */
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu li a:hover {
+  text-decoration: underline;
+}
+
   /* In your CSS file, e.g., App.css or a custom CSS file */
   .custom-navbar-bg {
     background-color: #370707;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class PlaceOrder extends Component {
   constructor(props) {
@@ -14,14 +15,23 @@ class PlaceOrder extends Component {
       editedQuantity: '',  
     };
   }
-
+  
+  componentDidMount() {
+    axios
+      .get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/user/{orderId}')
+      .then((response) => {
+        this.setState({ orders: response.data });
+      })
+      .catch((error) => {
+        console.error('Error fetching orders:', error);
+      });
+  } 
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
-  addOrder = () => {
-  };
+  
 
   removeOrder = (index) => {
     const { orders } = this.state;
