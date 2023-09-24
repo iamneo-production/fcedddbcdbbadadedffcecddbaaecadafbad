@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Homepage from './components/User/Homepage';
-import Myorder from './components/User/Myorder';
-import PlaceOrder from './components/User/PlaceOrder';
+import Homepage from './components/Home/Homepage';
+import Myorder from './components/Order/Myorder';
+import PlaceOrder from './components/Order/PlaceOrder';
 import Layout from './components/Layout';
 import Login from './components/Login'; 
-import Registration from './components/Registration'; 
+import Registration from './components/User/Registration'; 
 import './styles.css';
 import 'react-bootstrap/dist/react-bootstrap';
 import AdminGifts from './components/Admin/AdminGifts';

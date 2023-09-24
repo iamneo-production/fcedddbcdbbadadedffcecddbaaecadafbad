@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Adminvieworders extends Component {
   constructor(props) {
@@ -17,6 +18,17 @@ class Adminvieworders extends Component {
     };
   }
 
+  componentDidMount() {
+    axios
+      .get('http://localhost:8080/admin/viewOrders') 
+      .then((response) => {
+        this.setState({ orders: response.data });
+      })
+      .catch((error) => {
+        console.error('Error fetching orders:', error);
+      });
+  }
+
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -27,7 +39,7 @@ class Adminvieworders extends Component {
     orders.splice(index, 1);
     this.setState({ orders });
   };
-
+  
   editOrder = (index) => {
     const { orders } = this.state;
     this.setState({

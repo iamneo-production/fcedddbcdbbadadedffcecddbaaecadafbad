@@ -21,11 +21,10 @@ class AdminThemes extends Component {
     this.setState({ [name]: value });
   };
 
-  addTheme = () => {
+  addTheme = async () => {
     const { themeName, themeDetails, themePrice, themes, editingIndex } = this.state;
 
     if (editingIndex !== -1) {
-      // If editing an existing theme, update it
       const updatedThemes = [...themes];
       updatedThemes[editingIndex] = {
         themeName,
@@ -74,17 +73,14 @@ class AdminThemes extends Component {
     });
   };
   
-  /*handleEditTheme = async () => {
+  handleEditTheme = async (themeId) => {
     const { themeName, themePrice, themeDetails, editingIndex, themes } = this.state;
     const editedTheme = {
       themeName,
       themePrice,
       themeDetails,
     };
-  
-    const themeIdToEdit = themes[editingIndex].themeId; // Replace 'themeId' with the actual property name that holds the theme's ID
-  
-    try {
+
       const response = await axios.put(
         `http://localhost:8080/admin/editTheme/${themeId}`, // Adjust the URL structure based on your server's API
         editedTheme
@@ -102,11 +98,8 @@ class AdminThemes extends Component {
         themePrice: '',
         themeDetails: '',
       });
-    } catch (error) {
-      console.error('Error editing theme:', error);
-    }
-  };
-  
+    };
+
   handleDeleteTheme = async (index) => {
     const { editingIndex, themes } = this.state;
     
@@ -115,7 +108,7 @@ class AdminThemes extends Component {
       return;
     }
   
-    const themeIdToDelete = themes[index].themeId; // Replace 'themeId' with the actual property name that holds the theme's ID
+    const themeId = themes[index].themeId; // Replace 'themeId' with the actual property name that holds the theme's ID
   
     try {
       const response = await axios.delete(
@@ -134,7 +127,7 @@ class AdminThemes extends Component {
     } catch (error) {
       console.error('Error deleting theme:', error);
     }
-  };*/
+  };
   
 
   removeTheme = (index) => {
@@ -149,7 +142,7 @@ class AdminThemes extends Component {
       editingIndex: index,
       themeName: themes[index].themeName,
       themePrice: themes[index].themePrice,
-      themeDetails: themes[index].themeDescription,
+      themeDetails: themes[index].themeDetails,
     });
   };
 

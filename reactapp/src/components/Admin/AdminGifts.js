@@ -18,12 +18,25 @@ class AdminGifts extends Component {
       editingIndex: -1, 
     };
   }
+  
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-
+  
+  getGifts = () => {
+    axios.get('http://localhost:8080/admin/gifts').then((response) => {
+      this.setState({ gifts: response.data });
+      console.log(response.data);
+    });
+  }
+  
+  componentDidMount() {
+    this.getGifts();
+    console.log("Did mount called", this.state.gifts);
+     }
+ 
   addGift = () => {
     const { giftName, quantity, giftDetails, giftPrice, giftImageUrl, gifts, editingIndex } = this.state;
 
@@ -87,8 +100,8 @@ class AdminGifts extends Component {
       });
   };
   
-    /*handleEditGift = async () => {
-      const { giftName, giftPrice, giftImageUrl, quantity, giftDetails, editingIndex, gifts } = this.state;
+    handleEditGift = async () => {
+      const { giftName, giftPrice, giftImageUrl, quantity, giftDetails, editingIndex, gifts} = this.state;
       const editedGift = {
         giftName,
         giftPrice,
@@ -98,7 +111,7 @@ class AdminGifts extends Component {
       };
 
       const response = await axios.put(
-        `http://localhost:8080/admin/editGift/${giftId}`, // You may need to adjust the URL structure based on your server's API
+        `http://localhost:8080/admin/editGift/${giftName}`, // You may need to adjust the URL structure based on your server's API
         editedGift
       );
 
@@ -126,11 +139,11 @@ class AdminGifts extends Component {
         return;
       }
 
-      const giftIdToDelete = gifts[index].giftId; // Replace 'id' with the actual property name that holds the gift's ID
+      const giftName = gifts[index].giftName; // Replace 'id' with the actual property name that holds the gift's ID
 
       try {
         const response = await axios.delete(
-          `http://localhost:8080/admin/deleteGift/${giftId}` // Adjust the URL structure based on your server's API
+          `http://localhost:8080/admin/deleteGift/${giftName}` // Adjust the URL structure based on your server's API
         );
 
         console.log('Gift deleted:', response.data);
@@ -145,7 +158,7 @@ class AdminGifts extends Component {
       } catch (error) {
         console.error('Error deleting gift:', error);
       }
-    };*/
+    };
 
   removeGift = (index) => {
     const { gifts } = this.state;
@@ -314,9 +327,10 @@ class AdminGifts extends Component {
                             <Button variant="warning" onClick={() => this.editGift(index)} style={{ marginRight: '10px' }}>
                               Edit
                             </Button>
-                            <Button variant="danger" onClick={() => this.deleteGift(index)}>
+                            <Button variant="danger" onClick={() => this.handleDeleteGift(index)}>
                               Remove
                             </Button>
+                            
                           </>
                         )}
                       </td>
