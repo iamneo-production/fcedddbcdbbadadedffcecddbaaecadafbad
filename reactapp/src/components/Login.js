@@ -18,7 +18,7 @@ const Login =(props) => {
     e.preventDefault();
       const adminResponse = await axios.post('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/login', { email, password });
       console.log("handleLogin",adminResponse);
-      if ( !adminResponse.data) {
+      if (!adminResponse.data) {
         navigate('/AdminGifts');
       }
       else {

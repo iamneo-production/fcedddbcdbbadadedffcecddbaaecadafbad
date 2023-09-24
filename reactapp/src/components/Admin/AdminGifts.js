@@ -26,7 +26,7 @@ class AdminGifts extends Component {
   };
   
   getGifts = () => {
-    axios.get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/gifts').then((response) => {
+    axios.get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/gift').then((response) => {
       this.setState({ gifts: response.data });
       console.log(response.data);
     });
