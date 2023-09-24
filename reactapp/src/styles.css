@@ -1,12 +1,7 @@
 .App {
     background-color: white;
   }
-  .centered-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  
   .centered-container {
     display: flex;
     justify-content: center;
@@ -21,6 +16,10 @@
   /* styles.css */
   .login-page {
     background-color: #baa0a0; /* Replace with your desired background color */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
   }
 

@@ -32,7 +32,6 @@ const Login =(props) => {
 
   return (
     <div className="login-page">
-      <div className="centered-"
       <Navbar expand="lg" className="custom-navbar-bg">
         <Container className="d-flex justify-content-center">
           <Navbar.Brand style={{ color: 'white', fontWeight: 'bold' }}>Login</Navbar.Brand>
