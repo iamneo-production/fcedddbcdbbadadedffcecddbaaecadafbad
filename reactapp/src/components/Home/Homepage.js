@@ -16,7 +16,7 @@ const Homepage = () => {
   };
 
   const getGifts = () => {
-    axios.get('http://localhost:8080/admin/gifts').then((response) => {
+    axios.get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/gift').then((response) => {
       setProducts(response.data);
       console.log(response.data);
     });

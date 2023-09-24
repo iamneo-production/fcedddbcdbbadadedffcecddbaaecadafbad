@@ -40,7 +40,6 @@ class AdminThemes extends Component {
         themePrice: '', // Reset the themePrice field
       });
     } else {
-      // If not editing, add a new theme
       const newTheme = {
         themeName,
         themeDetails,
@@ -73,7 +72,7 @@ class AdminThemes extends Component {
     });
   };
   
-  handleEditTheme = async (themeId) => {
+  handleEditTheme = async () => {
     const { themeName, themePrice, themeDetails, editingIndex, themes } = this.state;
     const editedTheme = {
       themeName,
@@ -82,7 +81,7 @@ class AdminThemes extends Component {
     };
 
       const response = await axios.put(
-        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editTheme/${themeId}`, // Adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editTheme/${themeName}`, // Adjust the URL structure based on your server's API
         editedTheme
       );
   
@@ -108,11 +107,11 @@ class AdminThemes extends Component {
       return;
     }
   
-    const themeId = themes[index].themeId; // Replace 'themeId' with the actual property name that holds the theme's ID
+    const themeName = themes[index].themeName; // Replace 'themeId' with the actual property name that holds the theme's ID
   
     try {
       const response = await axios.delete(
-        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteTheme/${themeId}`, // Adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteTheme/${themeName}`, // Adjust the URL structure based on your server's API
       );
   
       console.log('Theme deleted:', response.data);
