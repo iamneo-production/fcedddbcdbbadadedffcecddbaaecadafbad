@@ -21,7 +21,6 @@ class PlaceOrder extends Component {
   };
 
   addOrder = () => {
-    // Add your code to add an order here if needed
   };
 
   removeOrder = (index) => {

@@ -2,12 +2,6 @@
     background-color: white;
   }
   
-  .centered-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
   /* In your CSS file, e.g., App.css or a custom CSS file */
   .custom-navbar-bg {
     background-color: #370707;
@@ -17,14 +11,7 @@
   .login-page {
     background-color: #baa0a0; /* Replace with your desired background color */
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
   }
-
-  
-  /* Add any additional styling you need for other elements here */
   
   /* styles.css */
   .registration-page {
