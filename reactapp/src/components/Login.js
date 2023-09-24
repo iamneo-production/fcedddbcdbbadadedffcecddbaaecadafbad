@@ -16,13 +16,13 @@ const Login =(props) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-      const adminResponse = await axios.post('http://localhost:8080/admin/login', { email, password });
+      const adminResponse = await axios.post('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/login', { email, password });
       console.log("handleLogin",adminResponse);
       if ( !adminResponse.data) {
         navigate('/AdminGifts');
       }
       else {
-        const userResponse = await axios.post('http://localhost:8080/user/login', { email, password });
+        const userResponse = await axios.post('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/user/login', { email, password });
         if (userResponse.data) {
            navigate('/');
         }

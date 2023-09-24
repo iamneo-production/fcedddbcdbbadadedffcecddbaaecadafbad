@@ -20,7 +20,7 @@ class Adminvieworders extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:8080/admin/viewOrders') 
+      .get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/viewOrders') 
       .then((response) => {
         this.setState({ orders: response.data });
       })

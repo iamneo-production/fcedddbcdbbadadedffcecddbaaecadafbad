@@ -59,7 +59,7 @@ class AdminThemes extends Component {
   handleAddTheme = async () => {
     const { themeName, themePrice, themeDetails } = this.state;
     const response = await axios.post(
-      'http://localhost:8080/admin/addTheme', {
+      'https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/addTheme', {
       themeName,
       themePrice,
       themeDetails,
@@ -82,7 +82,7 @@ class AdminThemes extends Component {
     };
 
       const response = await axios.put(
-        `http://localhost:8080/admin/editTheme/${themeId}`, // Adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editTheme/${themeId}`, // Adjust the URL structure based on your server's API
         editedTheme
       );
   
@@ -112,7 +112,7 @@ class AdminThemes extends Component {
   
     try {
       const response = await axios.delete(
-        `http://localhost:8080/admin/deleteTheme/${themeId}`, // Adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteTheme/${themeId}`, // Adjust the URL structure based on your server's API
       );
   
       console.log('Theme deleted:', response.data);

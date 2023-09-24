@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/admin/signup';
+const API_URL = 'https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/signup';
 
 export const createAdmin = async (adminData) => {
   try {

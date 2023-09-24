@@ -31,7 +31,7 @@ public class GiftServiceImpl implements GiftService{
                 .giftDetails(gift.getGiftDetails())
                 .giftPrice(giftEntity.getGiftPrice())
                 .giftImageUrl(giftEntity.getGiftImageUrl())
-                .giftQuantity(giftEntity.getQuantity());
+                .quantity(giftEntity.getQuantity())
                 .build();
     }
 

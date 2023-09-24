@@ -26,7 +26,7 @@ class AdminGifts extends Component {
   };
   
   getGifts = () => {
-    axios.get('http://localhost:8080/admin/gifts').then((response) => {
+    axios.get('https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/gifts').then((response) => {
       this.setState({ gifts: response.data });
       console.log(response.data);
     });
@@ -82,7 +82,7 @@ class AdminGifts extends Component {
   handleAddGift = async () => {
     const { giftName, giftPrice, giftImageUrl, quantity, giftDetails } = this.state;
       const response = await axios.post(
-        'http://localhost:8080/admin/addGift', {
+        'https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/addGift', {
         giftName,
         giftPrice,
         giftImageUrl,
@@ -111,7 +111,7 @@ class AdminGifts extends Component {
       };
 
       const response = await axios.put(
-        `http://localhost:8080/admin/editGift/${giftName}`, // You may need to adjust the URL structure based on your server's API
+        `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/editGift/${giftName}`, // You may need to adjust the URL structure based on your server's API
         editedGift
       );
 
@@ -143,7 +143,7 @@ class AdminGifts extends Component {
 
       try {
         const response = await axios.delete(
-          `http://localhost:8080/admin/deleteGift/${giftName}` // Adjust the URL structure based on your server's API
+          `https://8080-fcedddbcdbbadadedffcecddbaaecadafbad.premiumproject.examly.io/admin/deleteGift/${giftName}` // Adjust the URL structure based on your server's API
         );
 
         console.log('Gift deleted:', response.data);
